@@ -14,7 +14,7 @@ async def on_ready():
         await asyncio.sleep(10)
         await bot.change_presence(activity=discord.Game('with dat banana bot'))
         await asyncio.sleep(5)
-        await bot.change_presence(activity=discord.Game('with {client.Guilds} servers'))
+        await bot.change_presence(activity=discord.Game(f'with {len(client.guilds)} servers'))
 
 @bot.event
 async def on_command_error(ctx, error):
