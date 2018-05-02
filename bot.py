@@ -143,6 +143,17 @@ async def div(ctx, a, b):
         await ctx.send(a / b)
     except ValueError:
         await ctx.send("That is not a valid integer. Please try again. This bot does not support decimal numbers.")
+        
+        
+@bot.command()
+async def coin(ctx):
+    choice = random.randint(1, 2)
+    if choice == 1:
+        embed = discord.Embed(title="**Heads**")
+        await ctx.send(embed=embed)
+    if choice == 2:
+        embed = discord.Embed(title="**Tails**")
+        return await ctx.send(embed=embed)
     
 
 bot.run(os.environ.get('TOKEN'))
