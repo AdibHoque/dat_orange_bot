@@ -46,7 +46,6 @@ async def embed(ctx):
 @bot.command()
 @commands.is_owner()
 async def restart(ctx):
-    try:
         msg = await ctx.send("Restarting the bot now.")
         await asyncio.sleep(1)
         await msg.edit(content="Peace! Restarting!")
