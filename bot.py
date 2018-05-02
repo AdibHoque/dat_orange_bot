@@ -150,4 +150,4 @@ async def div(ctx, a, b):
         await ctx.send("That is not a valid integer. Please try again. This bot does not support decimal numbers.")
     
 
-bot.run("NDM5OTE5MDEzNzY2NzU4NDIw.DcgxcQ.f6Ye5ShO7fRofttMfwrBAUr2kTI")
+bot.run("")
