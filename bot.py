@@ -94,7 +94,31 @@ async def ban(ctx, user: discord.Member):
 async def warn(ctx, user: discord.Member, reason):
     await ctx.send("You have been warned by {} for {}".format(ctx.author.name, reason))
     
-    
+@bot.command()
+@commands.has_permissions(kick_members=True)
+async def mute(ctx, user: discord.Member = None):
+    if user is None:
+        return await ctx.send("Please tag the user in order to mute them.")
+    try:
+        await ctx.channel.set_permissions(user, send_messages=False)
+        return await ctx.send(f"{user.mention} has been muted. Unmute them when you see fit.")
+    except commands.errors.MissingPermissions:
+        return await ctx.send("You lack perms")
+    except discord.Forbidden:
+        return await ctx.send("I lack the **Manage channel** permission.")
+
+@bot.command()
+@commands.has_permissions(kick_members=True)
+async def unmute(ctx, user: discord.Member = None):
+    if user is None:
+        return await ctx.send("Please tag the user in order to unmute them")
+    try:
+        await ctx.channel.set_permissions(user, send_messages=True)
+        return await ctx.send(f"{user.mention} has been unmuted. Enjoy freedom. While it lasts.")
+    except commands.errors.MissingPermissions:
+        return await ctx.send("You lack perms")
+    except discord.Forbidden:
+        return await ctx.send("I lack the **Manage Channel** permission.")    
 
 @bot.command()
 async def invite(ctx):
