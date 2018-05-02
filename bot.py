@@ -157,7 +157,7 @@ async def coin(ctx):
         return await ctx.send(embed=embed)
     
     
- @bot.command(pass_context=True)
+@bot.command(pass_context=True)
 async def fortune(ctx):
     embed = discord.Embed(title=random.choice([
         "It is certain", "As I see it, yes ", "It is decidedly so ",
