@@ -49,7 +49,7 @@ async def restart(ctx):
         os.execv(sys.executable, ['python'] + ['\\Users\\megat\\Desktop\\bravo_zulu\\bot.py'])
 
 
-@bot.command(pass_context=True)
+@bot.command(pass_context=True, aliases=["clear"])
 @commands.has_permissions(manage_messages=True)
 async def purge(ctx, amount, description="Clears messages from the chat"):
     try:
