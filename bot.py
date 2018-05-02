@@ -92,7 +92,7 @@ async def ban(ctx, user: discord.Member):
 
 @bot.command
 async def warn(ctx, user: discord.Member, reason):
-    await user.send("You have been warned by {} for {}".format(ctx.author.name, reason))
+    await ctx.send("You have been warned by {} for {}".format(ctx.author.name, reason))
     
     
 
