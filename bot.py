@@ -111,7 +111,7 @@ async def support(ctx):
 @bot.command()
 async def contributors(ctx):
     embed = discord.Embed(title="Bravo Zulu Developers", color=0xce1414)
-    embed.description = "Main Devs: \n Bravo Zulu#0638 \n FreeTNT#5796 \n Ice#1234 \n Sub Devs: \n L3NNY#4519 \n dat banana boi#1982 \n CyRIC#0847"
+    embed.description = "Main Devs: \n Bravo Zulu#0638 \n FreeTNT#5796 \n CyRIC#0847 \n Sub Devs: \n L3NNY#4519 \n dat banana boi#1982 \n Ice#1234"
     await ctx.send(embed=embed)
 
 
