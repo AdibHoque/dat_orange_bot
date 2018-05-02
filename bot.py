@@ -6,7 +6,6 @@ import os
 import sys
 
 bot = commands.Bot(command_prefix="bz.", owner_id=426060491681431562)
-prefix = bot
 
 @bot.event
 async def on_ready():
@@ -149,4 +148,4 @@ async def div(ctx, a, b):
         await ctx.send("That is not a valid integer. Please try again. This bot does not support decimal numbers.")
     
 
-bot.run("")
+bot.run(os.environ.get('TOKEN'))
