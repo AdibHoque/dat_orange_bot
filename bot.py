@@ -13,8 +13,6 @@ async def on_ready():
     while True:
         await bot.change_presence(activity=discord.Game(name='bz.help with my friends!'))
         await asyncio.sleep(10)
-        await bot.change_presence(activity=discord.Game('with dat banana bot'))
-        await asyncio.sleep(10)
         await bot.change_presence(activity=discord.Game(f'with {len(client.guilds)} servers'))
         await asyncio.sleep(10)
 
