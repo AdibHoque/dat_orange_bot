@@ -107,6 +107,7 @@ async def support(ctx):
 
 
 @bot.command()
+
 async def contributors(ctx):
     embed = discord.Embed(title="Bravo Zulu Developers", color=0xce1414)
     embed.description = "Main Devs: \n Bravo Zulu#0638 \n FreeTNT#5796 \n CyRIC#0847 \n Sub Devs: \n L3NNY#4519 \n dat banana boi#1982 \n Ice#1234"
@@ -169,5 +170,11 @@ async def fortune(ctx):
         "NO. JUST NO."]), color=0xce1414)
     await ctx.send(embed=embed)
     
+@bot.command(pass_context=True)
+async def coclineup(ctx):
+    embed = discord.Embed(title=random.choice([
+        "5v5", "10v10", "15v15", "20v20",
+        "30v30", "40v40", "50v50"]), color=0xce1414)
+    await ctx.send(embed=embed)
 
 bot.run(os.environ.get('TOKEN'))
