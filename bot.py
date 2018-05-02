@@ -156,5 +156,18 @@ async def coin(ctx):
         embed = discord.Embed(title="**Tails**")
         return await ctx.send(embed=embed)
     
+    
+ @bot.command(pass_context=True)
+async def fortune(ctx):
+    embed = discord.Embed(title=random.choice([
+        "It is certain", "As I see it, yes ", "It is decidedly so ",
+        "Without a doubt ", "Yes definitely ", "You may rely on it ",
+        "Most likely ", "Outlook good ", "Yes ", ":thumbsup: ",
+        "Reply hazy try again ", "Ask again later", "Better not tell you now ",
+        "Cannot predict now ", "Concentrate and ask again", "Don't count on it",
+        "My reply is no ", "My sources say no ", "Outlook not so good ", "Very doubtful ",
+        "NO. JUST NO."]), color=0xce1414)
+    await ctx.send(embed=embed)
+    
 
 bot.run(os.environ.get('TOKEN'))
