@@ -90,7 +90,10 @@ async def ban(ctx, user: discord.Member):
         await ctx.send("no perms bro")
         
 
-
+@bot.command
+async def warn(ctx, user: discord.Member, reason):
+    await user.send("You have been warned by {} for {}".format(ctx.author.name, reason))
+    
     
 
 @bot.command()
@@ -102,7 +105,7 @@ async def invite(ctx):
 @bot.command()
 async def support(ctx):
     embed = discord.Embed(title='Bravo Zulu Support Server', color=0xce1414)
-    embed.description = "https://discord.gg/EvjMmPB"
+    embed.description = "https://discord.gg/EvjMmPB \n https://github.com/granthood/bravo_zulu_bot"
     await ctx.send(embed=embed)
 
 
