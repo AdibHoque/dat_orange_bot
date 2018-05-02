@@ -1,4 +1,4 @@
-import discord 
+{lenimport discord 
 from discord.ext import commands
 from discord.ext.commands import Bot
 import asyncio
@@ -12,7 +12,7 @@ async def on_ready():
     while True:
         await bot.change_presence(activity=discord.Game(name='bz.help with my friends!'))
         await asyncio.sleep(10)
-        await bot.change_presence(activity=discord.Game('in {bot.guilds} servers!'))
+        await bot.change_presence(activity=discord.Game('in {len{bot.guilds}} servers!'))
         await asyncio.sleep(10)
 
 @bot.event
