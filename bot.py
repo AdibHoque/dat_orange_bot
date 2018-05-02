@@ -4,6 +4,7 @@ from discord.ext.commands import Bot
 import asyncio
 import os
 import sys
+import random
 
 bot = commands.Bot(command_prefix="bz.", owner_id=426060491681431562)
 
