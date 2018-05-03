@@ -49,7 +49,11 @@ async def on_command_error(ctx, error):
       if isinstance(error, commands.MissingPermissions):
         await ctx.send("You lack the nessecary permissions to use this command. Please get your superior.")  
         
-
+@bot.event
+async def on_message(msg):
+    """Ignores the message of bots."""
+    if not msg.author.bot:
+        await bot.process_commands(msg)
 
 @bot.command(pass_context=True)
 async def ping(ctx):
