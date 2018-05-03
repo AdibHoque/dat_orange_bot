@@ -228,5 +228,42 @@ async def coclineup(ctx):
         "5v5", "10v10", "15v15", "20v20",
         "30v30", "40v40", "50v50"]), color=0xce1414)
     await ctx.send(embed=embed)
+    
+@bot.command()
+async def hack(ctx, user: discord.Member):
+        """Hack someone's account! Try it!"""
+        msg = await ctx.send(f"Hacking! Target: {user}")
+        await asyncio.sleep(2)
+        await msg.edit(content=f"Accessing {user}'s Files... [▓▓    ]")
+        await asyncio.sleep(2)
+        await msg.edit(content="Accessing {user}'s Files... [▓▓▓   ]")
+        await asyncio.sleep(2)
+        await msg.edit(content="Accessing{user}'s Files... [▓▓▓▓▓ ]")
+        await asyncio.sleep(2)
+        await msg.edit(content="Accessing {user}'s Files COMPLETE! [▓▓▓▓▓▓]")
+        await asyncio.sleep(2)
+        await msg.edit(content="Retrieving Login Info... [▓▓▓    ]")
+        await asyncio.sleep(3)
+        await msg.edit(content="Retrieving Login Info... [▓▓▓▓▓ ]")
+        await asyncio.sleep(3)
+        await msg.edit(content="Retrieving Login Info... [▓▓▓▓▓▓ ]")
+        await asyncio.sleep(4)
+        await msg.edit(content=f"An error has occurred hacking {user}'s account. Please try again later. ❌") 
+        
+        
+        
+@bot.command(pass_context=True)
+async def info(ctx, user: discord.Member):
+    embed = discord.Embed(title="{}'s info".format(user.name), description="Here's what I could find.", color=0x00ff00)
+    embed.add_field(name="Name", value=user.name, inline=True)
+    embed.add_field(name="ID", value=user.id, inline=True)
+    embed.add_field(name="Status", value=user.status, inline=True)
+    embed.add_field(name="Highest role", value=user.top_role)
+    embed.add_field(name="Joined", value=user.joined_at)
+    embed.set_thumbnail(url=user.avatar_url)
+    await ctx.send(embed=embed)
+    
+    
+
 
 bot.run(os.environ.get('TOKEN'))
