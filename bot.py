@@ -21,6 +21,8 @@ bot.db = bravo_db
 async def save_prefix(prefix, guildID, ctx):
     await bravo_db.bravo.prefix.update_one({"id": str(ctx.guild.id)}, {"$set": {"prefix": prefix}}, upsert=True)
 
+bot.load_extension("cogs.Errorhandler")
+    
 @bot.command()
 @commands.has_permissions(manage_messages=True)
 async def prefix(ctx, prefix=None):
