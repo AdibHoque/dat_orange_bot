@@ -354,7 +354,117 @@ async def coin(ctx):
         return await ctx.send(embed=embed)
     
     
-@bot.command(pass_context=True)
+@bot.command()
+async def prifles(ctx):
+    """Veiw the stats of AR's in PUBG Mobile"""
+    embed = discord.Embed(title="AR Stats", description="AR Stats for AR's in PUBG Mobile", color=0xce1414)
+    embed.add_field(name="Weapon", value="Groza\nAKM\ndp28\nauga3\nM16A4\nM416\nScar-L\nM249")
+    embed.add_field(name="Use bz.<weapon name> for more info")
+    await ctx.send(embed=embed)
+
+@bot.command()
+async def groza(ctx):
+    """Veiw the stats of the Groza AR"""
+    embed = discord.Embed(title="Groza Stats", description="Stats for the Groza AR", color=0xce1414)
+    embed.add_field(name="Base Damage", value="49")
+    embed.add_field(name="Fire Rate", value="0.08 sec")
+    embed.add_field(name="DPS (Damage Per Second)", value="843")
+    embed.add_field(name="TTK (Time to Kill)", value="0.24 sec")
+    embed.add_field(name="STK (Chest) (Shots to Kill)", value="4")
+    embed.add_field(name="STK (Head)", value="2")
+    embed.add_field(name="Ammo Type", value="7.62")
+    await ctx.send(embed=embed)
+
+@bot.command()
+async def akm(ctx):
+    """Veiw the stats of the AKM AR"""
+    embed = discord.Embed(title="AKM Stats", description="Stats for the AKM AR", color=0xce1414)
+    embed.add_field(name="Base Damage", value="49")
+    embed.add_field(name="Fire Rate", value="0.1 sec")
+    embed.add_field(name="DPS (Damage Per Second)", value="490")
+    embed.add_field(name="TTK (Time to Kill)", value="0.3 sec")
+    embed.add_field(name="STK (Chest) (Shots to Kill)", value="4")
+    embed.add_field(name="STK (Head)", value="2")
+    embed.add_field(name="Ammo Type", value="7.62")
+    await ctx.send(embed=embed)
+
+@bot.command()
+async def dp28(ctx):
+    """Veiw the stats of the DP-28 AR"""
+    embed = discord.Embed(title="DP-28 Stats", description="Stats for the DP-28 AR", color=0xce1414)
+    embed.add_field(name="Base Damage", value="49")
+    embed.add_field(name="Fire Rate", value="0.08 sec")
+    embed.add_field(name="DPS (Damage Per Second)", value="450")
+    embed.add_field(name="TTK (Time to Kill)", value="0.33 sec")
+    embed.add_field(name="STK (Chest) (Shots to Kill)", value="4")
+    embed.add_field(name="STK (Head)", value="2")
+    embed.add_field(name="Ammo Type", value="7.62")
+    await ctx.send(embed=embed)
+
+@bot.command()
+async def auga3(ctx):
+    """Veiw the stats of the Aug A3 AR"""
+    embed = discord.Embed(title="Aug A3 Stats", description="Stats for the Aug A3 AR", color=0xce1414)
+    embed.add_field(name="Base Damage", value="44")
+    embed.add_field(name="Fire Rate", value="0.095 sec")
+    embed.add_field(name="DPS (Damage Per Second)", value="513")
+    embed.add_field(name="TTK (Time to Kill)", value="0.26 sec")
+    embed.add_field(name="STK (Chest) (Shots to Kill)", value="4")
+    embed.add_field(name="STK (Head)", value="2")
+    embed.add_field(name="Ammo Type", value="5.56")
+    await ctx.send(embed=embed)
+
+@bot.command()
+async def m16a4(ctx):
+    """Veiw the stats of the M16A4 AR"""
+    embed = discord.Embed(title="M16A4 Stats", description="Stats for the M16A4 AR", color=0xce1414)
+    embed.add_field(name="Base Damage", value="44")
+    embed.add_field(name="Fire Rate", value="0.075 sec")
+    embed.add_field(name="DPS (Damage Per Second)", value="587")
+    embed.add_field(name="TTK (Time to Kill)", value="0.23 sec")
+    embed.add_field(name="STK (Chest) (Shots to Kill)", value="4")
+    embed.add_field(name="STK (Head)", value="2")
+    embed.add_field(name="Ammo Type", value="5.56")
+    await ctx.send(embed=embed)
+
+@bot.command()
+async def m416(ctx):
+    """Veiw the stats of the M416 AR"""
+    embed = discord.Embed(title="M416 Stats", description="Stats for the M416 AR", color=0xce1414)
+    embed.add_field(name="Base Damage", value="49")
+    embed.add_field(name="Fire Rate", value="0.085 sec")
+    embed.add_field(name="DPS (Damage Per Second)", value="513")
+    embed.add_field(name="TTK (Time to Kill)", value="0.26 sec")
+    embed.add_field(name="STK (Chest) (Shots to Kill)", value="4")
+    embed.add_field(name="STK (Head)", value="2")
+    embed.add_field(name="Ammo Type", value="5.56")
+    await ctx.send(embed=embed)
+
+@bot.command()
+async def scarl(ctx):
+    """Veiw the stats of the Scar-L AR"""
+    embed = discord.Embed(title="Scar-L Stats", description="Stats for the Scar-L AR", color=0xce1414)
+    embed.add_field(name="Base Damage", value="49")
+    embed.add_field(name="Fire Rate", value="0.095 sec")
+    embed.add_field(name="DPS (Damage Per Second)", value="458")
+    embed.add_field(name="TTK (Time to Kill)", value="0.29 sec")
+    embed.add_field(name="STK (Chest) (Shots to Kill)", value="4")
+    embed.add_field(name="STK (Head)", value="2")
+    embed.add_field(name="Ammo Type", value="5.56")
+    await ctx.send(embed=embed)
+
+@bot.command()
+async def m249(ctx):
+    """Veiw the stats of the M249 LMG"""
+    embed = discord.Embed(title="Groza Stats", description="Stats for the M249 LMG", color=0xce1414)
+    embed.add_field(name="Base Damage", value="49")
+    embed.add_field(name="Fire Rate", value="0.075 sec")
+    embed.add_field(name="DPS (Damage Per Second)", value="600")
+    embed.add_field(name="TTK (Time to Kill)", value="0.23 sec")
+    embed.add_field(name="STK (Chest) (Shots to Kill)", value="4")
+    embed.add_field(name="STK (Head)", value="2")
+    embed.add_field(name="Ammo Type", value="5.56")
+    await ctx.send(embed=embed)@bot.command(pass_context=True)
 async def fortune(ctx):
     embed = discord.Embed(title=random.choice([
         "It is certain", "As I see it, yes ", "It is decidedly so ",
@@ -396,19 +506,7 @@ async def hack(ctx, user: discord.Member):
         
         
         
-@bot.command()
-async def userinfo(ctx, user: discord.Member):
-    embed = discord.Embed(title="{}'s info".format(user.name), description='Here is what I could find:', color=ctx.message.author.color)
-    embed.add_field(name='Name', value='{}'.format(user.name))
-    embed.add_field(name='ID', value='{}'.format(user.id), inline=True)
-    embed.add_field(name='Highest Role', value='<@&{}>'.format(user.top_role.id), inline=True)
-    embed.add_field(name='Joined at', value='{:%d/%h/%y at %H:%M}'.format(user.joined_at), inline=True)
-    embed.add_field(name='Created at', value='{:%d/%h/%y at %H:%M}'.format(user.created_at), inline=True)
-    embed.add_field(name='Discriminator', value='{}'.format(user.discriminator), inline=True)
-    embed.add_field(name='Playing', value='{}'.format(user.game))
-    embed.set_footer(text="{}'s Info".format(user.name), icon_url='{}'.format(user.avatar_url))
-    embed.set_thumbnail(url=user.avatar_url)
-    await ctx.send(embed=embed)
+
     
     
 
