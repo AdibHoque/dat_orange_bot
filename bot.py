@@ -396,14 +396,17 @@ async def hack(ctx, user: discord.Member):
         
         
         
-@bot.command(pass_context=True)
-async def info(ctx, user: discord.Member):
-    embed = discord.Embed(title="{}'s info".format(user.name), description="Here's what I could find.", color=0x00ff00)
-    embed.add_field(name="Name", value=user.name, inline=True)
-    embed.add_field(name="ID", value=user.id, inline=True)
-    embed.add_field(name="Status", value=user.status, inline=True)
-    embed.add_field(name="Highest role", value=user.top_role)
-    embed.add_field(name="Joined", value=user.joined_at)
+@bot.command()
+async def userinfo(ctx, user: discord.Member):
+    embed = discord.Embed(title="{}'s info".format(user.name), description='Here is what I could find:', color=ctx.message.author.color)
+    embed.add_field(name='Name', value='{}'.format(user.name))
+    embed.add_field(name='ID', value='{}'.format(user.id), inline=True)
+    embed.add_field(name='Highest Role', value='<@&{}>'.format(user.top_role.id), inline=True)
+    embed.add_field(name='Joined at', value='{:%d/%h/%y at %H:%M}'.format(user.joined_at), inline=True)
+    embed.add_field(name='Created at', value='{:%d/%h/%y at %H:%M}'.format(user.created_at), inline=True)
+    embed.add_field(name='Discriminator', value='{}'.format(user.discriminator), inline=True)
+    embed.add_field(name='Playing', value='{}'.format(user.game))
+    embed.set_footer(text="{}'s Info".format(user.name), icon_url='{}'.format(user.avatar_url))
     embed.set_thumbnail(url=user.avatar_url)
     await ctx.send(embed=embed)
     
