@@ -3,6 +3,7 @@ from discord.ext import commands
 import asyncio
 import os
 import json
+import traceback
 from motor.motor_asyncio import AsyncIOMotorClient
 import sys
 import textwrap
