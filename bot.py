@@ -8,6 +8,7 @@ from motor.motor_asyncio import AsyncIOMotorClient
 import sys
 import textwrap
 import io
+from contextlib import redirect_stdout
 import random
 import inspect
 
