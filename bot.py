@@ -15,7 +15,7 @@ async def get_prefix(bot, message):
     pre = l.get('prefix', "bz.")
     return pre
 
-bot = commands.Bot(command_prefix="bz.", owner_id=426060491681431562)
+bot = commands.Bot(command_prefix=get_prefix, owner_id=426060491681431562)
 bot.db = bravo_db
 
 async def save_prefix(prefix, guildID, ctx):
