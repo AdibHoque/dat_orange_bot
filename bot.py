@@ -5,6 +5,7 @@ import os
 from motor.motor_asyncio import AsyncIOMotorClient
 import sys
 import random
+import inspect
 
 bravo_db = AsyncIOMotorClient(os.environ.get("MONGODB"))
 
@@ -18,10 +19,24 @@ async def get_prefix(bot, message):
 bot = commands.Bot(command_prefix=get_prefix, owner_id=426060491681431562)
 bot.db = bravo_db
 
+bot._last_result = None
+
+def cleanup_code(content):
+    '''Automatically removes code blocks from the code.'''
+    # remove ```py\n```
+    if content.startswith('```') and content.endswith('```'):
+        return '\n'.join(content.split('\n')[1:-1])
+
+    return content.strip('` \n')
+
 async def save_prefix(prefix, guildID, ctx):
     await bravo_db.bravo.prefix.update_one({"id": str(ctx.guild.id)}, {"$set": {"prefix": prefix}}, upsert=True)
 
 bot.load_extension("cogs.Errorhandler")
+    
+if 'TOKEN' in os.environ:
+    heroku = True
+    TOKEN = os.environ['TOKEN']
     
 def dev_check(id):
     with open('data/devs.json') as f:
