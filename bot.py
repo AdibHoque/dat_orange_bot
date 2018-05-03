@@ -1,26 +1,25 @@
 import discord 
 from discord.ext import commands
-from discord.ext.commands import Bot
 import asyncio
 import os
-import AsyncIOMotorClient
+from motor.motor_asyncio import AsyncIOMotorClient
 import sys
 import random
 
-temp_db = AsyncIOMotorClient(os.environ.get("MONGODB"))
+bravo_db = AsyncIOMotorClient(os.environ.get("MONGODB"))
 
 async def get_prefix(bot, message):
-    l = await temp_db.bravo.prefix.find_one({"id": str(message.guild.id)})
+    l = await bravo_db.bravo.prefix.find_one({"id": str(message.guild.id)})
     if l is None:
         return "bz."
     pre = l.get('prefix', "bz.")
     return pre
 
 bot = commands.Bot(command_prefix="bz.", owner_id=426060491681431562)
-bot.db = temp_db
+bot.db = bravo_db
 
 async def save_prefix(prefix, guildID, ctx):
-    await temp_db.bravo.prefix.update_one({"id": str(ctx.guild.id)}, {"$set": {"prefix": prefix}}, upsert=True)
+    await bravo_db.bravo.prefix.update_one({"id": str(ctx.guild.id)}, {"$set": {"prefix": prefix}}, upsert=True)
 
 @bot.command()
 @commands.has_permissions(manage_messages=True)
