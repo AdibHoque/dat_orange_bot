@@ -44,10 +44,6 @@ async def on_ready():
         await bot.change_presence(activity=discord.Game(f'with {len(bot.guilds)} servers'))
         await asyncio.sleep(10)
 
-@bot.event
-async def on_command_error(ctx, error):
-      if isinstance(error, commands.MissingPermissions):
-        await ctx.send("You lack the nessecary permissions to use this command. Please get your superior.")  
         
 @bot.event
 async def on_message(msg):
