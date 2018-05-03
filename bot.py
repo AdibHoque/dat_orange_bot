@@ -5,6 +5,7 @@ import os
 import json
 from motor.motor_asyncio import AsyncIOMotorClient
 import sys
+import io
 import random
 import inspect
 
