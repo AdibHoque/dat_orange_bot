@@ -25,6 +25,7 @@ bot = commands.Bot(command_prefix=get_prefix, owner_id=426060491681431562)
 bot.db = bravo_db
 
 bot._last_result = None
+bot.remove_command("help")
 
 def cleanup_code(content):
     '''Automatically removes code blocks from the code.'''
