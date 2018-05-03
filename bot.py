@@ -50,6 +50,26 @@ def dev_check(id):
             return True
         return False
     
+    
+@bot.event
+async def on_guild_join(guild):
+    channel = bot.get_channel(441408391676559361)
+    embed = discord.Embed(title='New Server!', description=f'Server Name: {guild.name} | Server Num {len(bot.guilds)}', color=discord.Color.green())
+    embed.set_thumbnail(url=guild.icon_url)
+    embed.set_footer(text=f"Server ID: {guild.id}")
+    embed.set_author(name=f"Owner: {guild.owner} | ID: {guild.owner.id}", icon_url=guild.owner.avatar_url)
+    await channel.send(embed=embed)
+
+
+@bot.event
+async def on_guild_remove(guild):
+    channel = bot.get_channel(441408391676559361)
+    embed = discord.Embed(title='Removed from Server', description=f'Server Name: {guild.name} | Server Num {len(bot.guilds)}', color=discord.Color.red())
+    embed.set_thumbnail(url=guild.icon_url)
+    embed.set_footer(text=f"Server ID: {guild.id}")
+    embed.set_author(name=f"Owner: {guild.owner} | ID: {guild.owner.id}", icon_url=guild.owner.avatar_url)
+    await channel.send(embed=embed)
+    
 @bot.event
 async def on_ready():
     print("----------------")
