@@ -23,6 +23,16 @@ async def save_prefix(prefix, guildID, ctx):
 
 bot.load_extension("cogs.Errorhandler")
     
+    
+@bot.event
+async def on_ready():
+    print("----------------")
+    print("Logged in as:")
+    print("Name : {}".format(bot.user.name))
+    print("ID : {}".format(bot.user.id))
+    print("Py Lib Version: %s"%discord.__version__)
+    print("----------------")
+    
 @bot.command()
 @commands.has_permissions(manage_messages=True)
 async def prefix(ctx, prefix=None):
