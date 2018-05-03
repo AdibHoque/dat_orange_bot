@@ -3,10 +3,37 @@ from discord.ext import commands
 from discord.ext.commands import Bot
 import asyncio
 import os
+import AsyncIOMotorClient
 import sys
 import random
 
+temp_db = AsyncIOMotorClient(os.environ.get("MONGODB"))
+
+async def get_prefix(bot, message):
+    l = await temp_db.bravo.prefix.find_one({"id": str(message.guild.id)})
+    if l is None:
+        return "bz."
+    pre = l.get('prefix', "bz.")
+    return pre
+
 bot = commands.Bot(command_prefix="bz.", owner_id=426060491681431562)
+bot.db = temp_db
+
+async def save_prefix(prefix, guildID, ctx):
+    await temp_db.bravo.prefix.update_one({"id": str(ctx.guild.id)}, {"$set": {"prefix": prefix}}, upsert=True)
+
+@bot.command()
+@commands.has_permissions(manage_messages=True)
+async def prefix(ctx, prefix=None):
+    """Change Prefix of the server"""
+    guildID = str(ctx.guild.id)
+    if not prefix:
+        return await ctx.send('Please provide a prefix for this command to work')
+    try:
+        await save_prefix(prefix, guildID, ctx)
+        await ctx.send(f'Prefix `{prefix}` successfully saved (re-run this command to replace it)')
+    except Exception as e:
+        await ctx.send(f'Something went wrong\nError Log: `str({e})`')
 
 @bot.event
 async def on_ready():
