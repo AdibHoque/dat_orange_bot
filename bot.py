@@ -139,16 +139,6 @@ async def restart(ctx):
         os.execv(sys.executable, ['python'] + ['\\Users\\megat\\Desktop\\bravo_zulu\\bot.py'])
 
 
-@bot.command()
-@commands.has_permissions(kick_members=True)
-async def kick(ctx, user: discord.Member):
-    try:
-        await ctx.send(f"**{user.name}** has been kicked from the server.")
-        await ctx.guild.kick(user)
-    except discord.Forbidden:
-        await ctx.send(f"Bravo Zulu lacks the permission to kick **{user.name}**.")
-    except commands.errors.MissingPermissions:
-        await ctx.send("You don't have the nessecary perms to do that.")
         
         
 @bot.command(name='eval')
