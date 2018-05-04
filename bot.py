@@ -101,7 +101,7 @@ async def prefix(ctx, prefix=None):
 @bot.event
 async def on_ready():
     while True:
-        await bot.change_presence(activity=discord.Game(name='bz.help with my friends!'))
+        await bot.change_presence(activity=discord.Game(name='b.help!'))
         await asyncio.sleep(10)
         await bot.change_presence(activity=discord.Game(f'with {len(bot.guilds)} servers'))
         await asyncio.sleep(10)
