@@ -17,8 +17,8 @@ bravo_db = AsyncIOMotorClient(os.environ.get("MONGODB"))
 async def get_prefix(bot, message):
     l = await bravo_db.bravo.prefix.find_one({"id": str(message.guild.id)})
     if l is None:
-        return "bz."
-    pre = l.get('prefix', "bz.")
+        return "b."
+    pre = l.get('prefix', "b.")
     return pre
 
 bot = commands.Bot(command_prefix=get_prefix, owner_id=426060491681431562)
