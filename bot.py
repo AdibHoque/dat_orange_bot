@@ -41,7 +41,7 @@ async def save_prefix(prefix, guildID, ctx):
 bot.load_extension("cogs.Errorhandler")
 bot.load_extension("cogs.Help")
 bot.load_extension("cogs.mod")
-bot.load_extension("cods.fun")
+bot.load_extension("cogs.fun")
 bot.load_extension("cogs.pubg")
 bot.load_extension("cogs.math")
     
