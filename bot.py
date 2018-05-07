@@ -17,8 +17,8 @@ bravo_db = AsyncIOMotorClient(os.environ.get("MONGODB"))
 async def get_prefix(bot, message):
     l = await bravo_db.bravo.prefix.find_one({"id": str(message.guild.id)})
     if l is None:
-        return "b."
-    pre = l.get('prefix', "b.")
+        return "o."
+    pre = l.get('prefix', "o.")
     return pre
 
 bot = commands.Bot(command_prefix=get_prefix, owner_id=426060491681431562)
@@ -101,10 +101,15 @@ async def prefix(ctx, prefix=None):
 @bot.event
 async def on_ready():
     while True:
-        await bot.change_presence(activity=discord.Game(name='b.help!'))
+        await bot.change_presence(activity=discord.Game(name='o.help!'))
         await asyncio.sleep(10)
         await bot.change_presence(activity=discord.Game(f'with {len(bot.guilds)} servers'))
         await asyncio.sleep(10)
+        await bot.change_presence(activity=disord.Game(f'with {len({m for m in bot.get_all_members() if m.status == discord.Status.online})} online users!
+        await asyncio.sleep(10)
+        await bot.change_presence(activity=discord.Game(f"with {len(bot.users)} users!")
+        await asyncio.sleep(10)
+        
 
         
 @bot.event
