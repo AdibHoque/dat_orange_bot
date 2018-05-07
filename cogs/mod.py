@@ -111,7 +111,24 @@ class Mod:
             body = f'joined {time.human_timedelta(member.joined_at)}, created {time.human_timedelta(member.created_at)}'
             e.add_field(name=f'{member} (ID: {member.id})', value=body, inline=False)
 
-        await ctx.send(embed=e)   
+        await ctx.send(embed=e)  
+        
+        
+        
+    @commands.command()
+    @commands.guild_only()
+    @checks.has_permissions(kick_members=True)
+    async def softban(self, ctx, member: MemberID, *, reason: ActionReason = None):
+        """Soft bans a member from the server.
+        """
+
+        if reason is None:
+            reason = f'Action done by {ctx.author} (ID: {ctx.author.id})'
+
+        obj = discord.Object(id=member)
+        await ctx.guild.ban(obj, reason=reason)
+        await ctx.guild.unban(obj, reason=reason)
+        await ctx.send('\N{OK HAND SIGN}')
         
 
 
