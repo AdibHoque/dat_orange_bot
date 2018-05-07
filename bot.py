@@ -117,7 +117,7 @@ async def on_message(msg):
 @bot.command(pass_context=True)
 async def ping(ctx):
     embed = discord.Embed(title="dat orange bot | My latency is: ", color=0x00ff00)
-    embed.description = f"{bot.latency * 1000:.4f} ms \n WOaH THATS ~~hella~ fast!!"
+    embed.description = f"{bot.latency * 1000:.4f} ms \n WoAh THATS ~~hella~~ fast!!"
     await ctx.send(embed=embed)
 
 @bot.command()
