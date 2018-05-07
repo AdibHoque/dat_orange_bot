@@ -117,12 +117,9 @@ class Mod:
         
     @commands.command()
     @commands.has_permissions(kick_members=True)
-    async def softban(self, ctx, user: discord.Member, *, reason: ActionReason = None):
+    async def softban(self, ctx, user: discord.Member, *):
         """Soft bans a member from the server.
         """
-
-        if reason is None:
-            reason = f'Action done by {ctx.author} (ID: {ctx.author.id})'
 
         obj = discord.Object(id=user)
         await ctx.guild.ban(obj, reason=reason)
