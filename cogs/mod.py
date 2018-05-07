@@ -117,7 +117,7 @@ class Mod:
         
     @commands.command()
     @commands.has_permissions(kick_members=True)
-    async def softban(self, ctx, user: discord.Member, *):
+    async def softban(self, ctx, user: discord.Member):
         """Soft bans a member from the server.
         """
 
