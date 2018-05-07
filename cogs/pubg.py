@@ -3,7 +3,7 @@ from discord.ext import commands
 from discord.ext.commands import Bot
 import asyncio
 
-class PUBGM2:
+class PUBG:
     def __init__(self, bot):
         self.bot = bot
 
@@ -299,4 +299,4 @@ class PUBGM2:
 
 
 def setup(bot):
-    bot.add_cog(PUBGM2(bot))
+    bot.add_cog(PUBG(bot))
