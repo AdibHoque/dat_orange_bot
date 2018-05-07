@@ -106,7 +106,6 @@ async def on_ready():
         await bot.change_presence(activity=discord.Game(f'with {len(bot.guilds)} servers'))
         await asyncio.sleep(10)
         await bot.change_presence(activity=discord.Game(f"with {len(bot.users)} users!")
-        await asyncio.sleep(10)
         
 
         
