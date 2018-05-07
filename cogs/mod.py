@@ -116,7 +116,6 @@ class Mod:
         
         
     @commands.command()
-    @commands.guild_only()
     @checks.has_permissions(kick_members=True)
     async def softban(self, ctx, member: MemberID, *, reason: ActionReason = None):
         """Soft bans a member from the server.
