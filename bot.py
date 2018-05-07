@@ -230,7 +230,7 @@ async def _eval(ctx, *, body):
 
 @bot.command()
 async def invite(ctx):
-    embed = discord.Embed(title="Bravo Zulu invite link!", color=0xce1414)
+    embed = discord.Embed(title="dat orange bot invite link!", color=0xce1414)
     embed.description = "https://discordapp.com/api/oauth2/authorize?client_id=439919013766758420&permissions=305454295&scope=bot :smile: :muscle::skin-tone-2:"
     await ctx.send(embed = embed)
 
