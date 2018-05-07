@@ -116,11 +116,12 @@ async def on_message(msg):
 
 @bot.command(pass_context=True)
 async def ping(ctx):
-    embed = discord.Embed(title="Bravo Zulu! | My latency is: ", color=0x00ff00)
-    embed.description = f"{bot.latency * 1000:.4f} ms"
+    embed = discord.Embed(title="dat orange bot | My latency is: ", color=0x00ff00)
+    embed.description = f"{bot.latency * 1000:.4f} ms \n WOaH THATS ~~hella~ fast!!"
     await ctx.send(embed=embed)
 
 @bot.command()
+@commands.is_owner()
 async def embed(ctx):
     embed = discord.Embed(title="Not a title", description="Not a description", color = 0x00ff00)
     embed.set_footer(text="Not a footer")
