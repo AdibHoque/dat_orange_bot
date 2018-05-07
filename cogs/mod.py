@@ -127,7 +127,7 @@ class Mod:
         obj = discord.Object(id=member)
         await ctx.guild.ban(obj, reason=reason)
         await ctx.guild.unban(obj, reason=reason)
-        await ctx.send('\N{OK HAND SIGN}')
+        await ctx.send('YeAh BOI! That ~~bitch~~ user got ~~soft~~banned!!!')
         
 
 
