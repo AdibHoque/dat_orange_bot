@@ -91,27 +91,7 @@ class Mod:
 
     
         
-    @commands.command(aliases=['newmembers'])
-    async def newusers(self, ctx, *, count=5):
-        """Tells you the newest members of the server.
-        This is useful to check if any suspicious members have
-        joined.
-        The count parameter can only be up to 25.
-        """
-        count = max(min(count, 25), 5)
-
-        if not ctx.guild.chunked:
-            await self.bot.request_offline_members(ctx.guild)
-
-        members = sorted(ctx.guild.members, key=lambda m: m.joined_at, reverse=True)[:count]
-
-        e = discord.Embed(title='New Members', colour=discord.Colour.green())
-
-        for member in members:
-            body = f'joined {time.human_timedelta(member.joined_at)}, created {time.human_timedelta(member.created_at)}'
-            e.add_field(name=f'{member} (ID: {member.id})', value=body, inline=False)
-
-        await ctx.send(embed=e)  
+     
         
         
         
