@@ -44,6 +44,7 @@ bot.load_extension("cogs.mod")
 bot.load_extension("cogs.fun")
 bot.load_extension("cogs.pubg")
 bot.load_extension("cogs.math")
+bot.load_extension("cogs.idiotic")
     
 if 'TOKEN' in os.environ:
     heroku = True
