@@ -7,7 +7,6 @@ import sys, traceback
 import random
 import datetime
 import time
-import BucketType
 
 def to_emoji(c):
     base = 0x1f1e6
@@ -60,15 +59,7 @@ class Fun:
 
 
         
-    @commands.command()
-    @commands.cooldown(1, 5, BucketType.user)
-    async def say(self, ctx, *, message: commands.clean_content()):
-        '''Say something as the bot'''
-        try:
-            await ctx.message.delete()
-        except discord.Forbidden:
-            pass
-        await ctx.send(message)
+    
         
     
     
