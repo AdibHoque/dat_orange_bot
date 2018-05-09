@@ -20,7 +20,7 @@ class Idiotic:
 
 
     @commands.command()
-    async def blame(self, ctx, *, text):
+    async def blame(self, ctx, *, text=None):
         """Blame someone!"""
         await ctx.send(file=discord.File(await self.client.blame(str(text)), "blame.png"))
 
