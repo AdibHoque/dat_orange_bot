@@ -45,7 +45,7 @@ class Idiotic:
             await ctx.send(f"O H S N A P! something went wrong. kthnxbai. \n{e}")
             
     @commands.command()
-    async def step(self, ctx, user: discord.Member = None):
+    async def shit(self, ctx, user: discord.Member = None):
         await ctx.trigger_typing()
         user = user if user is not None else ctx.author
         try:
