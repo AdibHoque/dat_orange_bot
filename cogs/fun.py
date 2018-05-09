@@ -64,9 +64,6 @@ class Fun:
     @commands.cooldown(1, 5, BucketType.user)
     async def say(self, ctx, *, message: commands.clean_content()):
         '''Say something as the bot'''
-        voted = await self.upvoted(ctx.author.id)
-        if not voted:
-            return await ctx.send(f'To use this command, you must upvote RemixBot here: https://discordbots.org/bot/{self.bot.user.id}')
         try:
             await ctx.message.delete()
         except discord.Forbidden:
