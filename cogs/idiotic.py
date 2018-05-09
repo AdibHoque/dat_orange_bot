@@ -15,12 +15,14 @@ class Idiotic:
     """These commands are simply to idiotic for me."""
     def __init__(self, bot):
         self.bot = bot
+        self.token = os.environ.get("IDIOTICAPI")
+        self.client = idioticapi.Client(self.token, dev=True)
 
 
     @commands.command()
     async def blame(self, ctx, *, text):
         """Blame someone!"""
-        await ctx.send(file=discord.File(await bot.api.blame(text), "blame.png"))
+        await ctx.send(file=discord.File(await self.client.blame(str(text)), "blame.png"))
 
 
 def setup(bot):
