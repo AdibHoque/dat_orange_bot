@@ -64,7 +64,14 @@ class Fun:
         '''Praise the Sun'''
         await ctx.send('https://i.imgur.com/K8ySn3e.gif')
         
-    
+    @commands.command()
+    async def countdown(self, ctx):
+        '''It's the final countdown'''
+        countdown = ['five', 'four', 'three', 'two', 'one']
+        for num in countdown:
+            await ctx.send('**:{0}:**'.format(num))
+            await asyncio.sleep(1)
+        await ctx.send('https://media.giphy.com/media/jVStxzak9yk2Q/giphy.gif')
     
 
 def setup(bot):
