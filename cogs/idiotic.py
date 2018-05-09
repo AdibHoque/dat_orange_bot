@@ -9,7 +9,6 @@ import datetime
 import time
 import idioticapi
 
-bot.api = os.environ.get("IDIOTICAPI")
 
 class Idiotic:
     """These commands are simply to idiotic for me."""
