@@ -16,6 +16,12 @@ class Idiotic:
         self.bot = bot
         self.token = os.environ.get("IDIOTICAPI")
         self.client = idioticapi.Client(self.token, dev=True)
+        
+        
+    def format_avatar(self, avatar_url):
+        if avatar_url.endswith(".gif"):
+            return avatar_url + "?size=2048"
+        return avatar_url.replace("webp", "png")
 
 
     @commands.command()
