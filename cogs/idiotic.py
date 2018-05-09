@@ -24,6 +24,19 @@ class Idiotic:
             await ctx.send(file=discord.File(await self.client.blame(str(text)), "blame.png"))
         except Exception as e:
             await ctx.send(f"An error occured. \nMore details: \n{e}")
+            
+            
+    @commands.command(aliases=['triggered'])
+    async def triggeredpic(self, ctx, user: discord.Member = None):
+        """T R I G Gered!!!"""
+        if user is None:
+            user = ctx.author
+        try:
+            await ctx.trigger_typing()
+            av = self.format_avatar(user.avatar_url)
+            await ctx.send(f"B O I! {ctx.author} just made {user.name} T R I G G E R E D!!", file=discord.File(await self.client.triggered(av), "triggered.gif"))
+        except Exception as e:
+        await ctx.send(f"O H S N A P! something went wrong. kthnxbai. \n{e}")
 
 
 def setup(bot):
