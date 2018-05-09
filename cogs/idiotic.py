@@ -36,7 +36,7 @@ class Idiotic:
             av = self.format_avatar(user.avatar_url)
             await ctx.send(f"B O I! {ctx.author} just made {user.name} T R I G G E R E D!!", file=discord.File(await self.client.triggered(av), "triggered.gif"))
         except Exception as e:
-        await ctx.send(f"O H S N A P! something went wrong. kthnxbai. \n{e}")
+    await ctx.send(f"O H S N A P! something went wrong. kthnxbai. \n{e}")
 
 
 def setup(bot):
