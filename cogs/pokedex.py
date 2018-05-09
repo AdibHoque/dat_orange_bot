@@ -3,7 +3,6 @@ from discord.ext import commands
 import aiohttp
 import random
 from bs4 import BeautifulSoup
-import PaginatorSession
 
 
 class Pokedex:
