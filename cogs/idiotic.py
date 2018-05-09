@@ -26,8 +26,8 @@ class Idiotic:
             await ctx.send(f"An error occured. \nMore details: \n{e}")
             
             
-    @commands.command(aliases=['triggered'])
-    async def triggeredpic(self, ctx, user: discord.Member = None):
+    @commands.command()
+    async def triggered(self, ctx, user: discord.Member = None):
         """T R I G Gered!!!"""
         if user is None:
             user = ctx.author
