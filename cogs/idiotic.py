@@ -44,7 +44,14 @@ class Idiotic:
         except Exception as e:
             await ctx.send(f"O H S N A P! something went wrong. kthnxbai. \n{e}")
             
-            
+    @commands.command()
+    async def step(self, ctx, user: discord.Member = None):
+        await ctx.trigger_typing()
+        user = user if user is not None else ctx.author
+        try:
+            await ctx.send(f"oh deer :deer:, {user.name} got stepped on. how unfortunate.", file=discord.File(await self.client.stepped(user.avatar_url), "stepped.png"))
+        except Exception as e:
+            await ctx.send(f"O H S N A P! something went wrong. kthnxbai. \n{e}")        
            
     @commands.command()
     async def facepalm(self, ctx, user: discord.Member = None):
