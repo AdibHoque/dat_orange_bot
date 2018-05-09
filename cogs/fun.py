@@ -7,6 +7,7 @@ import sys, traceback
 import random
 import datetime
 import time
+import BucketType
 
 def to_emoji(c):
     base = 0x1f1e6
