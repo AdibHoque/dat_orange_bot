@@ -43,6 +43,17 @@ class Idiotic:
             await ctx.send(f"B O I! {ctx.author} just made {user.name} T R I G G E R E D!!", file=discord.File(await self.client.triggered(av), "triggered.gif"))
         except Exception as e:
             await ctx.send(f"O H S N A P! something went wrong. kthnxbai. \n{e}")
+            
+            
+           
+    @commands.command()
+    async def facepalm(self, ctx, user: discord.Member = None):
+        await ctx.trigger_typing()
+        user = user if user is not None else ctx.author
+        try:
+            await ctx.send(f"oml, {user.name} had to facepalm. smh.", file=discord.File(await self.client.facepalm(user.avatar_url), "facepalm.png"))
+        except Exception as e:
+            await ctx.send(f"O H S N A P! something went wrong. kthnxbai. \n{e}}")
 
 
 def setup(bot):
