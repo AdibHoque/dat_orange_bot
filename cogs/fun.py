@@ -59,7 +59,10 @@ class Fun:
 
 
         
-    
+    @commands.command()
+    async def sun(self, ctx):
+        '''Praise the Sun'''
+        await ctx.send('https://i.imgur.com/K8ySn3e.gif')
         
     
     
