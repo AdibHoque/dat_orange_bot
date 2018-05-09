@@ -45,6 +45,7 @@ bot.load_extension("cogs.fun")
 bot.load_extension("cogs.pubg")
 bot.load_extension("cogs.math")
 bot.load_extension("cogs.idiotic")
+bot.load_extension("cogs.pokedex")
     
 if 'TOKEN' in os.environ:
     heroku = True
