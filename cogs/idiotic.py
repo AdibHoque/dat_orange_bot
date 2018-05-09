@@ -20,8 +20,10 @@ class Idiotic:
 
     @commands.command()
     async def blame(self, ctx, *, text=None):
-        """Blame someone!"""
-        await ctx.send(file=discord.File(await self.client.blame(str(text)), "blame.png"))
+        try:
+            await ctx.send(file=discord.File(await self.client.blame(str(text)), "blame.png"))
+        except Exception as e:
+            await ctx.send(f"An error occured. \nMore details: \n{e}")
 
 
 def setup(bot):
