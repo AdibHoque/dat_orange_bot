@@ -62,6 +62,15 @@ class Idiotic:
         except Exception as e:
             await ctx.send(f"O H S N A P! something went wrong. kthnxbai. \n{e}")
 
-
+    @commands.command()
+    async def insult(self, ctx, user: discord.Member = None):
+        await ctx.trigger_typing()
+        user = user if user is not None else ctx.author
+        try:
+            await ctx.send(f"aw eggplants! :eggplant:, {user.name} got insulted. how unfortunate.", file=discord.File(await self.client.waifu_insult(user.avatar_url), "waifuinsult.png"))
+        except Exception as e:
+await ctx.send(f"O H S N A P! something went wrong. kthnxbai. \n{e}")
+            
+            
 def setup(bot):
     bot.add_cog(Idiotic(bot))
