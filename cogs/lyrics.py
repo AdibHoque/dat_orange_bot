@@ -27,7 +27,7 @@ class Lyrics:
             log.debug('header : ' + header_text)
             log.debug('lryics : ' + lyrics_text)
         
-            await ctx.send(channel,user.mention+" friend i got the lyrics..here is it and also i send a copy as a file in pm")
+            await ctx.send("BOI i got the lyrics..here is it and also i send a copy as a file in pm")
             f = open(song.replace("+"," ")+'.txt','w')
             f.write('\t\t'+header_text+'\n\n'+lyrics_text)
             f.close()
