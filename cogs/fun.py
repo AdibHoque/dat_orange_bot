@@ -151,7 +151,7 @@ class Fun:
     @commands.command()
     async def doggo(message, client):
         """pretty pupper"""
-        await ctz.send("""---------------------------
+        await ctx.send("""---------------------------
     ┈┈┈┈╱▏┈┈┈┈┈╱▔▔▔▔╲┈┈┈┈┈
     ┈┈┈┈▏▏┈┈┈┈┈▏╲▕▋▕▋▏┈┈┈┈
     ┈┈┈┈╲╲┈┈┈┈┈▏┈▏┈▔▔▔▆┈┈┈
@@ -248,7 +248,7 @@ class Fun:
     """)
 
     async def feels(message, client):
-        """I ~~~caused~~ feel your pain"""
+        """I ~~caused~~ feel your pain"""
         await ctx.send("""───────▄▀▀▀▀▀▀▀▀▀▀▄▄
     ────▄▀▀░░░░░░░░░░░░░▀▄
     ──▄▀░░░░░░░░░░░░░░░░░░▀▄
