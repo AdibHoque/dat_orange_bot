@@ -1,4 +1,4 @@
-from bot_log import log
+
 import discord
 from discord.ext import commands
 import asyncio
