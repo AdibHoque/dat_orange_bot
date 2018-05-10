@@ -75,7 +75,13 @@ class Fun:
         await ctx.send('https://media.giphy.com/media/jVStxzak9yk2Q/giphy.gif')
         
         
-    
+    @commands.command()
+    async def avatar(self, ctx, user : discord.Member):
+        """Look at the avatar of a user"""
+        embed = discord.Embed(title="Avatar of : " + user.name, url=user.avatar_url, description="[The avatar({})".format(user.avatar_url))
+        embed.set_thumbnail(url=user.avatar_url)
+        await ctx.send(embed=embed)
+
     
 
 def setup(bot):
