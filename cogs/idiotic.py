@@ -85,7 +85,7 @@ class Idiotic:
                 avatar = self.format_avatar(ctx.author.avatar_url)
                 await ctx.send(f"OOF! **{ctx.author.name}** slapped **{user.name}!**", file=discord.File(await self.client.batslap(avatar, av), "batslap.png"))
             except Exception as e:
-                await ctx.send(f"O H S N A P! something went wrong. kthnxbai. \n{e")
+                await ctx.send(f"O H S N A P! something went wrong. kthnxbai. \n{e}")
     
     
 def setup(bot):
