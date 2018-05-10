@@ -13,7 +13,7 @@ class Lyrics:
         self.headers = { 'User-Agent': 'Mozilla/5.0 (Windows NT 6.0; WOW64; rv:24.0) Gecko/20100101 Firefox/24.0' }
         self.link = "https://search.azlyrics.com/search.php?q="
     
-    async def getlyrics(self,ctx,song,channel,user):
+    async def getlyrics(self,ctx,song,channel):
         await self.bot.wait_until_ready()
         get_request_search = requests.get(self.link + song+ "&w=songs&p=1" , headers=self.headers)
         soup_search = BeautifulSoup(get_request_search.content,'html.parser')
