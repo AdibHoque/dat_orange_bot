@@ -270,5 +270,13 @@ class Fun:
         await ctx.send(msg)    
         
         
+    @commands.command()
+    async def tinyurl(self, ctx, *, link: str):
+        """Generate a tinyurl from a link."""
+        resp, cont = await self.bot.aio(method='get', url=f'http://tinyurl.com/api-create.php?url={link}',
+                                        return_attr='text')
+        await ctx.send(f'<{cont}>')
+        
+        
 def setup(bot):
     bot.add_cog(Fun(bot))
