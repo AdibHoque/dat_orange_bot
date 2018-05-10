@@ -11,7 +11,7 @@ import io
 from contextlib import redirect_stdout
 import random
 import inspect
-from moto.motor_asyncio import AsyncioMotorClient
+from motor.motor_asyncio import AsyncioMotorClient
 import os
 
 db = AsyncioMotorClient(os.environ.get("ECODB"))
