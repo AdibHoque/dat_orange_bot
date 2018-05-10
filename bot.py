@@ -11,6 +11,11 @@ import io
 from contextlib import redirect_stdout
 import random
 import inspect
+from moto.motor_asyncio import AsyncioMotorClient
+import os
+
+db = AsyncioMotorClient(os.environ.get("ECODB"))
+bot.db = db.datorangebot
 
 bravo_db = AsyncIOMotorClient(os.environ.get("MONGODB"))
 
@@ -59,6 +64,17 @@ def dev_check(id):
         if id in devs:
             return True
         return False
+    
+@bot.event
+async def on_message(message):
+    if message.author.bot: return # ignore bots kthx
+    # get current points
+    usr = await bot.db.points.find_one({ "_id": message.author.id })
+    if usr and usr.points:
+        await bot.db.points.update_one({ "_id": message.author.id }, { "$set": { "points": usr.points += 1 } })
+    else:
+        await bot.db.points.insert_one({ "_id": message.author.id, "points": 0 })
+    await bot.process_commands(message)    
     
     
 @bot.event
