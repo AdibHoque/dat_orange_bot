@@ -14,7 +14,7 @@ import inspect
 from motor.motor_asyncio import AsyncIOMotorClient
 import os
 
-db = AsyncioMotorClient(os.environ.get("ECODB"))
+db = AsyncIOMotorClient(os.environ.get("ECODB"))
 bot.db = db.datorangebot
 
 bravo_db = AsyncIOMotorClient(os.environ.get("MONGODB"))
