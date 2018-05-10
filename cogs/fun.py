@@ -270,7 +270,7 @@ class Fun:
         await ctx.send(msg)    
         
         
-   @commands.command(aliases=['google'])
+    @commands.command(aliases=['google'])
     async def g(self, ctx, *, query):
         """Searches google and gives you top result."""
         await ctx.trigger_typing()
