@@ -4,7 +4,6 @@ import asyncio
 import os
 import json
 import traceback
-from motor.motor_asyncio import AsyncIOMotorClient
 import sys
 import textwrap
 import io
@@ -12,10 +11,9 @@ from contextlib import redirect_stdout
 import random
 import inspect
 from motor.motor_asyncio import AsyncIOMotorClient
-import os
 
-db = AsyncIOMotorClient(os.environ.get("ECODB"))
-bot.db = db.datorangebot
+
+
 
 bravo_db = AsyncIOMotorClient(os.environ.get("MONGODB"))
 
@@ -27,7 +25,8 @@ async def get_prefix(bot, message):
     return pre
 
 bot = commands.Bot(command_prefix=get_prefix, owner_id=426060491681431562)
-bot.db = bravo_db
+db = AsyncIOMotorClient(os.environ.get("ECODB"))
+bot.db = db.datorangebot
 
 bot._last_result = None
 bot.remove_command("help")
