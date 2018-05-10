@@ -80,7 +80,7 @@ class Fun:
 
         r = requests.get('http://random.cat/meow.php')
         cat = str(r.json()['file'])
-        embed = discord.Embed(title="Meow", description="[Voir le chat plus grand]({})".format(cat), colour=0x03C9A9)
+        embed = discord.Embed(title="Meow", description="({})".format(cat), colour=0x03C9A9)
         embed.set_thumbnail(url=cat)
         embed.set_author(name="Random.cat", url='https://random.cat/', icon_url='http://outout.tech/tuxbot/nyancat2.gif')
         await ctx.send(embed=embed)
