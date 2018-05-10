@@ -83,7 +83,7 @@ class Fun:
         await ctx.send(embed=embed)
 
     @commands.command()
-    async def kappa(message, client):
+    async def kappa(self, ctx):
         """Generates a Kappa face."""
         await ctx.send("""░░░░░░░░░
         ░░░░▄▀▀▀▀▀█▀▄▄▄▄░░░░
@@ -102,7 +102,7 @@ class Fun:
         ░░░░░░░░▀▀█▄▄▄▄▀""")
 
     @commands.command()
-    async def ayy(message, client):
+    async def ayy(self, ctx):
         """AYY LMAO"""
         await ctx.send("""░░░░█▒▒▄▀▀▀▀▀▄▄▒▒▒▒▒▒▒▒▒▄▄▀▀▀▀▀▀▄
         ░░▄▀▒▒▒▄█████▄▒█▒▒▒▒▒▒▒█▒▄█████▄▒█
@@ -122,7 +122,7 @@ class Fun:
         ▀░░░▀░░▀░░░░▀░░░░▀▀▀░░░░░░░░░▀░░░▀░▀▄▄▄▀﻿""")
 
     @commands.command()
-    async def lenny(message, client):
+    async def lenny(self, ctx):
         """Generate a lenny face"""
         await ctx.send("""───█───▄▀█▀▀█▀▄▄───▐█──────▄▀█▀▀█▀▄▄
     ──█───▀─▐▌──▐▌─▀▀──▐█─────▀─▐▌──▐▌─█▀
@@ -136,7 +136,7 @@ class Fun:
     ───█───────────▀▄▄▄▄▄▄▄▄▄▀────────█""")
 
     @commands.command()
-    async def banHammer(message, client):
+    async def banhammer(self, ctx):
         """BAN HAMMER"""
         await ctx.send("""░░░░░░░░░░░░
      ▄████▄░░░░░░░░░░░░░░░░░░░░
@@ -149,7 +149,7 @@ class Fun:
 
         
     @commands.command()
-    async def doggo(message, client):
+    async def doggo(self, ctx):
         """pretty pupper"""
         await ctx.send("""---------------------------
     ┈┈┈┈╱▏┈┈┈┈┈╱▔▔▔▔╲┈┈┈┈┈
@@ -163,7 +163,7 @@ class Fun:
 
     
     @commands.command()
-    async def hitler(message, client):
+    async def hitler(self, ctx):
         """HAIL HITLER"""
         await ctx.send("""░░░░░░░░░░░░░░░░░░
     ░░░░▓▓▀▀██████▓▄▒▒░░░
@@ -182,7 +182,7 @@ class Fun:
 
     
     @commands.command()
-    async def mario(message, client):
+    async def mario(self, ctx):
         """IT'S-A ME-A MARIO!"""
         await ctx.send("""▒▒▒▒▒▒▒▒▒▄▄▄▄▒▄▄▄▒▒▒
     ▒▒▒▒▒▒▄▀▀▓▓▓▀█░░░█▒▒
@@ -201,7 +201,7 @@ class Fun:
 
     
     @commands.command()
-    async def megaman(message, client):
+    async def megaman(self, ctx):
         """megaman"""
         await ctx.send("""░░░░░░░░░░▄▄█▀▀▄░░░░
     ░░░░░░░░▄█████▄▄█▄░░░░
@@ -217,7 +217,7 @@ class Fun:
     
     
     @commands.command()
-    async def salt(message, client):
+    async def salt(self, ctx):
         """Feelin' salty?"""
         await ctx.send("""▒▒▒▒▒▒▄▄██████▄
     ▒▒▒▒▒▒▒▒▒▒▄▄████████████▄
@@ -234,7 +234,7 @@ class Fun:
     ▒▒▒░░░░░░░░▒▒
 """)
 
-    async def pikachu(message, client):
+    async def pikachu(self, ctx):
         """PIKACHU!"""
         await ctx.send("""░░░░█░▀▄░░░░░░░░░░▄▄███▀
     ░░░░█░░░▀▄░▄▄▄▄▄░▄▀░░░█▀
@@ -247,7 +247,7 @@ class Fun:
     ░░░░▀▄░░▀░░▀▀▀░░▀░░░▄█▀
     """)
 
-    async def feels(message, client):
+    async def feels(self, ctx):
         """I ~~caused~~ feel your pain"""
         await ctx.send("""───────▄▀▀▀▀▀▀▀▀▀▀▄▄
     ────▄▀▀░░░░░░░░░░░░░▀▄
