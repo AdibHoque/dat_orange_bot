@@ -71,6 +71,22 @@ class Idiotic:
         except Exception as e:
             await ctx.send(f"O H S N A P! something went wrong. kthnxbai. \n{e}")
             
-            
+    
+    @commands.command()
+    async def batslap(self, ctx, user: discord.Member = None):
+        """Tag someone to give them A TASTE OF YOUR P A L M"""
+        if user is None:
+            await ctx.send("Tag the user first bro")
+        else:
+            await ctx.trigger_typing()
+            try:
+
+                av = self.format_avatar(user.avatar_url)
+                avatar = self.format_avatar(ctx.author.avatar_url)
+                await ctx.send(f"OOF! **{ctx.author.name}** slapped **{user.name}!**", file=discord.File(await self.client.batslap(avatar, av), "batslap.png"))
+            except Exception as e:
+        await ctx.send(f"O H S N A P! something went wrong. kthnxbai. \n{e")
+    
+    
 def setup(bot):
     bot.add_cog(Idiotic(bot))
