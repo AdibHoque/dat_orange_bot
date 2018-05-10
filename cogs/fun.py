@@ -72,6 +72,18 @@ class Fun:
             await ctx.send('**:{0}:**'.format(num))
             await asyncio.sleep(1)
         await ctx.send('https://media.giphy.com/media/jVStxzak9yk2Q/giphy.gif')
+        
+        
+    @commands.command()
+    async def randomcat(self, ctx):
+        """Display a random cat"""
+
+        r = requests.get('http://random.cat/meow.php')
+        cat = str(r.json()['file'])
+        embed = discord.Embed(title="Meow", description="[Voir le chat plus grand]({})".format(cat), colour=0x03C9A9)
+        embed.set_thumbnail(url=cat)
+        embed.set_author(name="Random.cat", url='https://random.cat/', icon_url='http://outout.tech/tuxbot/nyancat2.gif')
+        await ctx.send(embed=embed)
     
 
 def setup(bot):
