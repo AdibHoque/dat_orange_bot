@@ -71,10 +71,11 @@ async def on_message(message):
     # get current points
     usr = await bot.db.points.find_one({ "_id": message.author.id })
     if usr and usr.points:
-        await bot.db.points.update_one({ "_id": message.author.id }, { "$set": { "points": usr.points += 1 } })
+        points = usr.points + 1
+        await bot.db.points.update_one({ "_id": message.author.id }, { "$set": { "points": points } })
     else:
         await bot.db.points.insert_one({ "_id": message.author.id, "points": 0 })
-    await bot.process_commands(message)    
+    await bot.process_commands(message)  
     
     
 @bot.event
