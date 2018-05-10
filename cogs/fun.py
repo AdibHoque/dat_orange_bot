@@ -216,6 +216,7 @@ class Fun:
     ▒▒▒░░░░░░░░▒▒
 """)
 
+    @commands.command()
     async def pikachu(self, ctx):
         """PIKACHU!"""
         await ctx.send("""░░░░█░▀▄░░░░░░░░░░▄▄███▀
@@ -229,6 +230,7 @@ class Fun:
     ░░░░▀▄░░▀░░▀▀▀░░▀░░░▄█▀
     """)
 
+    @commands.command()
     async def feels(self, ctx):
         """I ~~caused~~ feel your pain"""
         await ctx.send("""───────▄▀▀▀▀▀▀▀▀▀▀▄▄
