@@ -64,17 +64,17 @@ def dev_check(id):
             return True
         return False
     
-@bot.event
-async def on_message(message):
-    if message.author.bot: return # ignore bots kthx
+#@bot.event
+#async def on_message(message):
+    #if message.author.bot: return # ignore bots kthx
     # get current points
-    usr = await bot.db.points.find_one({ "_id": message.author.id })
-    if usr and usr.points:
-        points = usr.points + 1
-        await bot.db.points.update_one({ "_id": message.author.id }, { "$set": { "points": points } })
-    else:
-        await bot.db.points.insert_one({ "_id": message.author.id, "points": 0 })
-    await bot.process_commands(message)  
+    #usr = await bot.db.points.find_one({ "_id": message.author.id })
+    #if usr and usr.points:
+        #points = usr.points + 1
+        #await bot.db.points.update_one({ "_id": message.author.id }, { "$set": { "points": points } })
+    #else:
+        #await bot.db.points.insert_one({ "_id": message.author.id, "points": 0 })
+    #await bot.process_commands(message)  
     
     
 @bot.event
