@@ -270,21 +270,7 @@ class Fun:
         await ctx.send(msg)    
         
         
-    @commands.command()
-    async def gif(self, ctx):
-        """Sends a random gif, imported fresh, as always."""
-        try:
-            em = discord.Embed(color=discord.Color(value=0x00ff00), title="Random GIF")
-            resp = await self.session.get(f'https://api.giphy.com/v1/gifs/trending?api_key={GIPHYAPI}') 
-            resp = await resp.json()
-            em.set_image(url=f"https://media.giphy.com/media/{resp['data'][random.randint(0, len(resp['data']) - 1)]['id']}/giphy.gif")
-            em.set_author(name=f"Requested by: {ctx.author.name}", icon_url=ctx.author.avatar_url)
-            em.set_footer(text='Powered by Giphy API')
-            await ctx.send(embed=em)
-        except Exception as e:
-            em = discord.Embed(color=discord.Color(value=0xf44242), title="An error occurred.")
-            em.description = f"More details: \n\n```{e}```"
-        await ctx.send(embed=em)
+    
         
         
 def setup(bot):
