@@ -57,16 +57,16 @@ class Music:
       self.bot = bot
         
   @commands.command()
-    async def connect(self, ctx):
-        '''Connects the bot to your current voice channel.'''
-        if ctx.author.voice is None:
-            return await ctx.send("Looks like you aren't connected to a voice channel yet! Where do I join?")
-        if ctx.voice_client is None:
-            await ctx.author.voice.channel.connect()
-            await ctx.send(f"Successfully connected to Voice Channel **{ctx.author.voice.channel.name}**. :white_check_mark:")
-        else:
-            await ctx.voice_client.move_to(ctx.author.voice.channel)
-            await ctx.send(f"Successfully connected to Voice Channel: **{ctx.author.voice.channel.name}**. :white_check_mark:")
+  async def connect(self, ctx):
+      '''Connects the bot to your current voice channel.'''
+      if ctx.author.voice is None:
+          return await ctx.send("Looks like you aren't connected to a voice channel yet! Where do I join?")
+      if ctx.voice_client is None:
+          await ctx.author.voice.channel.connect()
+          await ctx.send(f"Successfully connected to Voice Channel **{ctx.author.voice.channel.name}**. :white_check_mark:")
+      else:
+          await ctx.voice_client.move_to(ctx.author.voice.channel)
+          await ctx.send(f"Successfully connected to Voice Channel: **{ctx.author.voice.channel.name}**. :white_check_mark:")
     
   @commands.command()
   async def stop(self, ctx):
