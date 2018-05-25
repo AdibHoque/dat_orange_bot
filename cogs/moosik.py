@@ -56,6 +56,9 @@ class Music:
   def __init__(self, bot):
       self.bot = bot
         
+  if not discord.opus.is_loaded():
+    discord.opus.load_opus('libopus.so')
+        
   @commands.command()
   async def connect(self, ctx):
       '''Connects the bot to your current voice channel.'''
