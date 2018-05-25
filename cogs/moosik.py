@@ -52,24 +52,23 @@ class YTDLSource(discord.PCMVolumeTransformer):
         return cls(discord.FFmpegPCMAudio(filename, **ffmpeg_options), data=data)
 
 
-  class Music:
-    def __init__(self, bot):
-        self.bot = bot
+class Music:
+  def __init__(self, bot):
+      self.bot = bot
+        
+  @commands.command()
+  async def join(self, ctx, *, channel: discord.VoiceChannel):
+      """Joins a voice channel"""
 
-    @commands.command()
-    async def join(self, ctx, *, channel: discord.VoiceChannel):
-        """Joins a voice channel"""
+      if ctx.voice_client is not None:
+          return await ctx.voice_client.move_to(channel)
 
-        if ctx.voice_client is not None:
-            return await ctx.voice_client.move_to(channel)
-
-    await channel.connect()
+  await channel.connect()
     
-    @commands.command()
-    async def stop(self, ctx):
-        """Stops and disconnects the bot from voice"""
-
-    await ctx.voice_client.disconnect()
+  @commands.command()
+  async def stop(self, ctx):
+      """Stops and disconnects the bot from voice"""
+   await ctx.voice_client.disconnect()
     
 def setup(bot):
   bot.add_cog(Music(bot))
