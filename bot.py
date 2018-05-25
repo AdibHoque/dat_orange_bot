@@ -51,6 +51,7 @@ bot.load_extension("cogs.math")
 bot.load_extension("cogs.idiotic")
 bot.load_extension("cogs.info")
 bot.load_extension("cogs.dbl")
+bot.load_extension("cogs.moosik")
 
     
 if 'TOKEN' in os.environ:
