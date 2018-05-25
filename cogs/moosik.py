@@ -62,8 +62,7 @@ class Music:
 
       if ctx.voice_client is not None:
           return await ctx.voice_client.move_to(channel)
-
-  await ctx.channel.connect()
+      await ctx.channel.connect()
     
   @commands.command()
   async def stop(self, ctx):
