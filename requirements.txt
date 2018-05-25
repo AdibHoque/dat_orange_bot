@@ -21,7 +21,7 @@ pyfiglet
 clashroyale
 openweathermapy
 gitdb2
-libopus
+libopus.so
 fuzzywuzzy
 GitPython
 pytz
