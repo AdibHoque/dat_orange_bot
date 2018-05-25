@@ -57,7 +57,7 @@ class Music:
       self.bot = bot
         
   @commands.command()
-  async def join[channel](self, ctx, *, channel: discord.VoiceChannel):
+  async def join(self, ctx, *, channel: discord.VoiceChannel):
       """Joins a voice channel"""
 
       if ctx.voice_client is not None:
